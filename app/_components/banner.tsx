@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 
 const Banner = () => {
     return (
-        <div className="flex w-full !max-w-[1200px] flex-row items-center justify-between">
+        <div className="flex flex-row items-center justify-between pb-10">
             <div className="flex w-full flex-col md:!max-w-[580px]">
                 <h3 className="text-base font-semibold text-muted-foreground md:text-xl">
                     Desenvolvimento de sites
@@ -11,7 +11,7 @@ const Banner = () => {
                 <h1 className="pb-2 text-4xl font-semibold text-primary md:text-5xl">
                     Transforme suas ideias em realidade digital
                 </h1>
-                <p className="w-full text-xs font-medium md:max-w-[440px]">
+                <p className="w-full text-xs font-medium md:max-w-[580px] md:text-sm">
                     Dê vida à sua visão com nossos serviços de desenvolvimento!
                     Oferecemos soluções personalizadas em site, e-commerce e
                     software, tudo com design exclusivo e entrega pontual.
