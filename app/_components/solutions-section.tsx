@@ -40,11 +40,11 @@ const SolutionsSection = () => {
                 </div>
                 <div className="mt-6 flex flex-col items-center justify-center gap-2 lg:mt-0">
                     <Image
-                        width={300}
-                        height={260}
                         src="/techInnovation.png"
                         alt="Tecnologias inovadoras"
-                        className="h-300 min-w-300 object-cover"
+                        width={300}
+                        height={260}
+                        className="w-[280px] object-cover"
                     />
 
                     <Link href="mailto:kdeveloper@gmail.com">
