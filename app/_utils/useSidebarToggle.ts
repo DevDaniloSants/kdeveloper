@@ -1,14 +1,13 @@
 import { useSidebar } from '../_components/ui/sidebar';
 
 export const useSidebarToogle = () => {
-    const { toggleSidebar, open: isSidebarOpen } = useSidebar();
+    const { toggleSidebar } = useSidebar();
 
     const handleToggleSidebar = () => {
-        toggleSidebar();
+        return toggleSidebar();
     };
 
     return {
         handleToggleSidebar,
-        isSidebarOpen,
     };
 };

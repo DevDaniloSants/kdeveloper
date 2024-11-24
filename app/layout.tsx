@@ -6,6 +6,7 @@ import { Poppins } from 'next/font/google';
 import { SidebarProvider } from './_components/ui/sidebar';
 import AppSidebar from './_components/app-sidebar';
 import Navbar from './_components/navbar';
+import { cookies } from 'next/headers';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -22,12 +23,14 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const cookieStore = await cookies();
+    const defaultOpen = cookieStore.get('sidebar:state')?.value === 'true';
     return (
         <html lang="pt-br">
             <body className={`${poppins.className} dark antialiased`}>
-                <SidebarProvider>
+                <SidebarProvider defaultOpen={defaultOpen}>
                     <AppSidebar />
-                    <main className="h-full w-full pl-3">
+                    <main className="h-full w-dvw overflow-hidden">
                         <Navbar />
                         {children}
                     </main>

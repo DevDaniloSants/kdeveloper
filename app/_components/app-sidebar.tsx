@@ -14,7 +14,7 @@ import {
 } from '@/app/_components/ui/sidebar';
 import { Mail, Home, Wrench, LaptopMinimal } from 'lucide-react';
 import CardUserSidebar from './card-user-sidebar';
-import { useSidebarToogle } from '../_utils/useSidebarToogle';
+import { useSidebarToogle } from '../_utils/useSidebarToggle';
 
 const items = [
     {
@@ -40,16 +40,16 @@ const items = [
 ];
 
 const AppSidebar = () => {
-    const { handleToggleSidebar, isSidebarOpen } = useSidebarToogle();
+    const { handleToggleSidebar } = useSidebarToogle();
 
     return (
-        <Sidebar collapsible="icon">
+        <Sidebar>
             <SidebarContent className="pt-6">
                 <SidebarHeader className="flex flex-row items-center justify-center gap-0 pt-3">
                     <span className="rounded-full bg-primary p-1 text-xs text-primary-foreground">
                         KD
                     </span>
-                    {isSidebarOpen && <span className="text-xs">eveloper</span>}
+                    eveloper
                 </SidebarHeader>
                 <SidebarGroup>
                     <SidebarGroupLabel>Menu</SidebarGroupLabel>
@@ -72,7 +72,7 @@ const AppSidebar = () => {
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
-            <SidebarFooter className="p-1">
+            <SidebarFooter className="p-2">
                 <CardUserSidebar
                     image="danilo.jpeg"
                     name="Danilo Santos"

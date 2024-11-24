@@ -1,4 +1,3 @@
-import { useSidebarToogle } from '../_utils/useSidebarToogle';
 import { Avatar, AvatarImage } from './ui/avatar';
 import {
     Card,
@@ -25,53 +24,49 @@ const CardUserSidebar = ({
     linkedinUrl,
     githubUrl,
 }: CardUserSidebarProps) => {
-    const { isSidebarOpen } = useSidebarToogle();
-
     return (
-        <Card className="grid grid-cols-5 items-center border-none p-0">
-            <Avatar className="col-span-1">
-                <AvatarImage src={image} alt={name} />
-            </Avatar>
-            {isSidebarOpen && (
-                <>
-                    <CardHeader className="col-span-3">
-                        <CardTitle className="text-center text-xs">
-                            {name}
-                        </CardTitle>
-                        <CardDescription className="text-center text-xs">
-                            {description}
-                        </CardDescription>
-                    </CardHeader>
-                    <CardFooter className="col-span-1 gap-2 p-0">
-                        <Link
-                            href={linkedinUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <Image
-                                src="linkedin.svg"
-                                alt="Linkedin"
-                                width={20}
-                                height={20}
-                                className="grayscale transition-all duration-300 hover:grayscale-0"
-                            />
-                        </Link>
-                        <Link
-                            href={githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <Image
-                                src="github.svg"
-                                alt="Github"
-                                width={20}
-                                height={20}
-                                className="grayscale transition-all duration-300 hover:grayscale-0"
-                            />
-                        </Link>
-                    </CardFooter>
-                </>
-            )}
+        <Card className="flex w-full justify-between border-none p-0 py-2 shadow-none">
+            <CardHeader className="flex w-full flex-row gap-2 p-0">
+                <Avatar className="">
+                    <AvatarImage src={image} alt={name} />
+                </Avatar>
+
+                <div>
+                    <CardTitle className="text-xs">{name}</CardTitle>
+                    <CardDescription className="text-xs">
+                        {description}
+                    </CardDescription>
+                </div>
+            </CardHeader>
+
+            <CardFooter className="flex items-center gap-2 p-0">
+                <Link
+                    href={linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Image
+                        src="linkedin.svg"
+                        alt="Linkedin"
+                        width={22}
+                        height={22}
+                        className="grayscale transition-all duration-300 hover:grayscale-0"
+                    />
+                </Link>
+                <Link
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Image
+                        src="github.svg"
+                        alt="Github"
+                        width={22}
+                        height={22}
+                        className="grayscale transition-all duration-300 hover:grayscale-0"
+                    />
+                </Link>
+            </CardFooter>
         </Card>
     );
 };
