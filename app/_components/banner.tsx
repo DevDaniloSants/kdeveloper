@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Button } from './ui/button';
+import RequestQuoteButton from './request-quote-button';
 
 const Banner = () => {
     return (
@@ -16,10 +17,8 @@ const Banner = () => {
                     Oferecemos soluções personalizadas em site, e-commerce e
                     software, tudo com design exclusivo e entrega pontual.
                 </p>
-                <div className="mt-6 flex flex-wrap justify-end gap-2 md:flex md:justify-start md:gap-2">
-                    <Button size="lg" className="w-full sm:w-auto">
-                        Solicitar orçamento
-                    </Button>
+                <div className="mt-6 flex flex-wrap justify-end gap-2 md:flex md:justify-start md:gap-8">
+                    <RequestQuoteButton />
                     <Button
                         size="lg"
                         variant="outline"
