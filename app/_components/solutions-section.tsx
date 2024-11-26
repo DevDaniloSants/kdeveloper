@@ -17,11 +17,9 @@ const SolutionsSection = () => {
                         Negócio
                     </h3>
                     <p className="text-sm font-semibold text-muted-foreground">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Expedita illo magnam impedit rem, itaque
-                        recusandae qui, iure nemo accusantium sunt voluptas
-                        quaerat iste blanditiis numquam maiores fugiat
-                        molestiae. Earum, distinctio?
+                        Transformamos desafios em oportunidades, oferecendo
+                        soluções inovadoras para impulsionar o crescimento e a
+                        eficiência do seu negócio.
                     </p>
                     <div className="grid w-full grid-cols-1 gap-7 sm:grid-cols-2">
                         <div className="col-span-1 space-y-7">
@@ -40,11 +38,11 @@ const SolutionsSection = () => {
                 </div>
                 <div className="mt-6 flex flex-col items-center justify-center gap-2 lg:mt-0">
                     <Image
-                        src="/techInnovation.png"
+                        src="/techInnovation.webp"
                         alt="Tecnologias inovadoras"
-                        width={300}
-                        height={260}
-                        className="w-[280px] object-cover"
+                        width={220}
+                        height={200}
+                        className="w-[260px] object-cover"
                     />
 
                     <Link href="mailto:kdeveloper@gmail.com">
