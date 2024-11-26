@@ -1,7 +1,19 @@
-import { LaptopMinimal, SettingsIcon, ShoppingCartIcon } from 'lucide-react';
+'use client';
+
 import ServiceCardCustom from './service-card-custom';
+import { SERVICE_CARD_DATA } from '../_constants/services';
+import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
+import { useRef } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const ServicesSection = () => {
+    const plugin = useRef(
+        Autoplay({
+            delay: 2000,
+            stopOnInteraction: false,
+            stopOnMouseEnter: true,
+        })
+    );
     return (
         <div className="flex flex-col gap-12">
             <h1 className="text-center text-2xl font-semibold">
@@ -10,22 +22,28 @@ const ServicesSection = () => {
                     Tipos de Serviço
                 </span>
             </h1>
-            <div className="flex justify-between">
-                <ServiceCardCustom
-                    title="E-commerce"
-                    description="Criação de lojas virtuais completas.Seguras e escaláveis."
-                    icon={<ShoppingCartIcon className="text-primary" />}
-                />
-                <ServiceCardCustom
-                    title="Sites Empresariais"
-                    description="Desenvolvimento de sites modernos, rápidos e responsívos, projetados para destacar o seu negócio."
-                    icon={<LaptopMinimal className="text-primary" />}
-                />
-                <ServiceCardCustom
-                    title="Software"
-                    description="Criação de lojas virtuais completas.Seguras e escaláveis."
-                    icon={<SettingsIcon className="text-primary" />}
-                />
+            <div className="flex gap-2">
+                <Carousel
+                    className="max-w-1200px w-full"
+                    plugins={[plugin.current]}
+                >
+                    <CarouselContent>
+                        {SERVICE_CARD_DATA.map((service) => (
+                            <CarouselItem
+                                key={service.id}
+                                className="cursor-grabbing md:basis-1/2 lg:basis-1/3 lg:cursor-default"
+                            >
+                                <div className="p-1">
+                                    <ServiceCardCustom
+                                        title={service.title}
+                                        description={service.description}
+                                        icon={service.icon}
+                                    />
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                </Carousel>
             </div>
         </div>
     );

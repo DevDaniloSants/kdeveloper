@@ -28,13 +28,13 @@ const ProjectsSection = () => {
             </h1>
 
             <Carousel
-                className="w-full max-w-[1200px]"
+                className="w-full max-w-[1200px] cursor-grabbing"
                 plugins={[plugin.current]}
             >
-                <CarouselContent>
+                <CarouselContent className="group">
                     {PROJECTS_DATA.map((project) => (
                         <CarouselItem
-                            className="relative pl-1 md:basis-1/2 lg:basis-1/3"
+                            className="pl-1 md:basis-1/2 lg:basis-1/3"
                             key={project.id}
                         >
                             <HoverCard>
@@ -45,6 +45,7 @@ const ProjectsSection = () => {
                                                 href={project.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
+                                                className="group-active:cursor-grabbing"
                                             >
                                                 <Image
                                                     src={project.image}

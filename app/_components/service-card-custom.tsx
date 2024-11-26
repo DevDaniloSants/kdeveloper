@@ -15,7 +15,7 @@ const ServiceCardCustom = ({
     icon,
 }: ServiceCardCustomProps) => {
     return (
-        <Card className="flex h-[260px] max-w-[380px] flex-col items-center justify-center gap-3 border-border bg-white bg-opacity-5 p-6 duration-500 hover:bg-white/10">
+        <Card className="flex h-[260px] flex-col items-center justify-center gap-3 border-border bg-white bg-opacity-5 p-6 duration-500 hover:bg-white/10">
             <CardHeader className="flex flex-col items-center gap-5 p-0">
                 <Badge className="rounded-full bg-white bg-opacity-5 p-4">
                     {icon}
