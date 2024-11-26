@@ -17,7 +17,7 @@ const Banner = () => {
                     Oferecemos soluções personalizadas em site, e-commerce e
                     software, tudo com design exclusivo e entrega pontual.
                 </p>
-                <div className="mt-6 flex gap-2 sm:justify-between md:flex md:w-[400px] md:justify-start md:gap-8">
+                <div className="mt-6 flex flex-wrap gap-2 sm:justify-between md:flex md:w-[400px] md:flex-nowrap md:justify-start md:gap-8">
                     <RequestQuoteButton className="w-full" />
                     <Button size="lg" variant="outline" className="w-full">
                         <Image
