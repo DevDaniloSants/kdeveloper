@@ -47,7 +47,7 @@ export const TECHNOLOGIES = [
     {
         id: 10,
         name: 'Node.js',
-        src: 'nodejs.svg',
+        src: 'nodeJs.svg',
     },
     {
         id: 11,
@@ -62,7 +62,7 @@ export const TECHNOLOGIES = [
     {
         id: 13,
         name: 'PostgreSQL',
-        src: 'postgreSQL.svg',
+        src: 'PostgreSQL.svg',
     },
     {
         id: 14,
