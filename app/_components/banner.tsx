@@ -17,14 +17,16 @@ const Banner = () => {
                     Oferecemos soluções personalizadas em site, e-commerce e
                     software, tudo com design exclusivo e entrega pontual.
                 </p>
-                <div className="mt-6 flex flex-wrap justify-end gap-2 md:flex md:justify-start md:gap-8">
-                    <RequestQuoteButton />
-                    <Button
-                        size="lg"
-                        variant="outline"
-                        className="w-full sm:w-auto"
-                    >
-                        Whatsapp
+                <div className="mt-6 flex gap-2 sm:justify-between md:flex md:w-[400px] md:justify-start md:gap-8">
+                    <RequestQuoteButton className="w-full" />
+                    <Button size="lg" variant="outline" className="w-full">
+                        <Image
+                            src="whatsapp.svg"
+                            alt="whatsapp"
+                            width={20}
+                            height={20}
+                        />
+                        <p>Whatsapp</p>
                     </Button>
                 </div>
             </div>
