@@ -1,14 +1,9 @@
 import { Card, CardContent } from './ui/card';
 
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from './ui/tooltip';
 import Image from 'next/image';
 import RequestQuoteButton from './request-quote-button';
 import { TECHNOLOGIES } from '../_constants/technologies';
+import HybridTooltip from './hybrid-tooltip';
 
 const TechnologiesSection = () => {
     return (
@@ -35,25 +30,22 @@ const TechnologiesSection = () => {
                 </div>
                 <div className="mt-10 flex flex-wrap content-center justify-center gap-12 md:col-span-2 md:mt-0 lg:justify-start">
                     {TECHNOLOGIES.map((technology) => (
-                        <TooltipProvider key={technology.id}>
-                            <Tooltip>
-                                <TooltipTrigger asChild>
-                                    <Image
-                                        src={technology.src}
-                                        alt={technology.name}
-                                        width={36}
-                                        height={36}
-                                        style={{
-                                            width: 'auto',
-                                        }}
-                                        className="opacity-50 transition-transform duration-300 hover:-translate-y-1 hover:opacity-100"
-                                    />
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p>{technology.name}</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <HybridTooltip
+                            key={technology.id}
+                            trigger={
+                                <Image
+                                    src={technology.src}
+                                    alt={technology.name}
+                                    width={36}
+                                    height={36}
+                                    style={{
+                                        width: 'auto',
+                                    }}
+                                    className="opacity-50 transition-transform duration-300 hover:-translate-y-1 hover:opacity-100"
+                                />
+                            }
+                            content={<p>{technology.name}</p>}
+                        ></HybridTooltip>
                     ))}
                 </div>
             </CardContent>
