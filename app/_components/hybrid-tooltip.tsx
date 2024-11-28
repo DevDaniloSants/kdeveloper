@@ -26,7 +26,7 @@ const HybridTooltip = ({ trigger, content }: HybridTooltipProps) => {
     return isTouch ? (
         <Popover>
             <PopoverTrigger asChild>{trigger}</PopoverTrigger>
-            <PopoverContent className="flex w-fit items-center justify-center bg-zinc-600 p-2 text-sm text-white">
+            <PopoverContent className="flex w-fit items-center justify-center bg-white/10 p-2 text-xs text-white">
                 {content}
             </PopoverContent>
         </Popover>

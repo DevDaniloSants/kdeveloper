@@ -31,7 +31,7 @@ const HybridCardHover = ({ trigger, children }: HybridHoverCardProps) => {
             <Card className="border-none object-cover grayscale duration-500 hover:grayscale-0">
                 <CardContent className="flex aspect-square items-center justify-center p-6">
                     <PopoverTrigger asChild>{trigger}</PopoverTrigger>
-                    <PopoverContent className="flex w-dvw flex-col gap-4 border-white/10 bg-black">
+                    <PopoverContent className="flex w-dvw flex-col gap-4 border-white/10 bg-black sm:w-fit">
                         {children}
                     </PopoverContent>
                 </CardContent>
