@@ -1,5 +1,8 @@
+'use client';
+
 import { Calendar, GraduationCap } from 'lucide-react';
 import { Developer } from '../_constants/qualifications';
+import { motion } from 'framer-motion';
 
 interface QualificationsTimelineCustomProps {
     developer: Developer;
@@ -24,11 +27,20 @@ const QualificationsTimelineCustom = ({
                     </div>
                     <div className="relative col-span-12 space-y-6 sm:col-span-9 md:px-4">
                         <div className="relative col-span-12 space-y-12 before:dark:bg-gray-700 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:-left-3 sm:before:bottom-0 sm:before:top-2 sm:before:w-0.5 md:px-4">
-                            {developer.qualifications.map((qualification) => (
-                                <>
-                                    <div
+                            {developer.qualifications.map(
+                                (qualification, i) => (
+                                    <motion.div
                                         key={qualification.id}
                                         className="flex flex-col before:dark:bg-primary sm:relative sm:before:absolute sm:before:left-[-35px] sm:before:top-2 sm:before:z-[1] sm:before:h-4 sm:before:w-4 sm:before:rounded-full"
+                                        initial={{ opacity: 0, x: 100 }}
+                                        animate={{
+                                            opacity: 1,
+                                            x: 0,
+                                        }}
+                                        transition={{
+                                            duration: 0.5,
+                                            delay: i * 0.2,
+                                        }}
                                     >
                                         <h3 className="text-xl font-semibold tracking-wide text-white shadow">
                                             {qualification.title}
@@ -66,9 +78,9 @@ const QualificationsTimelineCustom = ({
                                         <p className="mt-3 text-sm lg:text-base">
                                             {qualification.description}
                                         </p>
-                                    </div>
-                                </>
-                            ))}
+                                    </motion.div>
+                                )
+                            )}
                         </div>
                     </div>
                 </div>

@@ -8,13 +8,15 @@ import TechnologiesSection from './_components/technologies-section';
 const Home = () => {
     return (
         <div className="my-24 flex justify-center px-6">
-            <div className="flex w-full !max-w-[1200px] flex-col gap-20">
+            <div className="flex w-full !max-w-[1200px] flex-col">
                 <Banner />
-                <SolutionsSection />
-                <ServicesSection />
-                <TechnologiesSection />
-                <ProjectsSection />
-                <QualificationSection />
+                <div className="space-y-20">
+                    <SolutionsSection />
+                    <ServicesSection />
+                    <TechnologiesSection />
+                    <ProjectsSection />
+                    <QualificationSection />
+                </div>
             </div>
         </div>
     );

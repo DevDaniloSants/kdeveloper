@@ -1,15 +1,18 @@
-import { CheckIcon } from 'lucide-react';
+'use client';
 
-interface SolutionsItemCustomProps {
+import { CheckIcon } from 'lucide-react';
+import { motion, MotionProps } from 'framer-motion';
+
+interface SolutionsItemCustomProps extends MotionProps {
     name: string;
 }
 
-const SolutionsItemCustom = ({ name }: SolutionsItemCustomProps) => {
+const SolutionsItemCustom = ({ name, ...props }: SolutionsItemCustomProps) => {
     return (
-        <div className="flex gap-1">
+        <motion.div className="flex gap-1" {...props}>
             <CheckIcon className="text-primary" />
             <p className="text-xs font-semibold sm:text-sm">{name}</p>
-        </div>
+        </motion.div>
     );
 };
 

@@ -28,7 +28,7 @@ const ServicesSection = () => {
                     plugins={[plugin.current]}
                 >
                     <CarouselContent>
-                        {SERVICE_CARD_DATA.map((service) => (
+                        {SERVICE_CARD_DATA.map((service, i) => (
                             <CarouselItem
                                 key={service.id}
                                 className="cursor-grabbing md:basis-1/2 lg:basis-1/3 lg:cursor-default"
@@ -38,6 +38,18 @@ const ServicesSection = () => {
                                         title={service.title}
                                         description={service.description}
                                         icon={service.icon}
+                                        initial={{
+                                            opacity: 0,
+                                            scale: 0,
+                                        }}
+                                        animate={{
+                                            opacity: 1,
+                                            scale: 1,
+                                        }}
+                                        transition={{
+                                            duration: 1,
+                                            delay: i * 0.5,
+                                        }}
                                     />
                                 </div>
                             </CarouselItem>
