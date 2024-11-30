@@ -1,4 +1,4 @@
-export const TECHNOLOGIES = [
+export const TECHNOLOGIES_DATA = [
     {
         id: 1,
         name: 'Figma',

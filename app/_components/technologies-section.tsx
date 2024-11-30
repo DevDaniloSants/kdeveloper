@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import Image from 'next/image';
 import RequestQuoteButton from './request-quote-button';
-import { TECHNOLOGIES } from '../_constants/technologies';
+import { TECHNOLOGIES_DATA } from '../_constants/technologies';
 import HybridTooltip from './hybrid-tooltip';
 
 const TechnologiesSection = () => {
@@ -47,7 +47,7 @@ const TechnologiesSection = () => {
                         </div>
                     </motion.div>
                     <div className="mt-10 flex flex-wrap content-center justify-center gap-12 md:col-span-2 md:mt-0 lg:justify-start">
-                        {TECHNOLOGIES.map((technology, i) => (
+                        {TECHNOLOGIES_DATA.map((technology, i) => (
                             <motion.div
                                 key={technology.id}
                                 initial={{ opacity: 0, scale: 0 }}

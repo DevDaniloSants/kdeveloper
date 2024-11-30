@@ -1,4 +1,5 @@
 import Banner from './_components/banner';
+import FAQSection from './_components/faq-section';
 import ProjectsSection from './_components/projects-section';
 import QualificationSection from './_components/qualifications-section';
 import ServicesSection from './_components/services-section';
@@ -16,6 +17,7 @@ const Home = () => {
                     <TechnologiesSection />
                     <ProjectsSection />
                     <QualificationSection />
+                    <FAQSection />
                 </div>
             </div>
         </div>
