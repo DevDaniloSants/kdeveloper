@@ -1,5 +1,7 @@
+'use client';
 import { FAQ_DATA } from '../_constants/faq';
 import FAQAccordionCustom from './faq-accordion-custom';
+import { motion } from 'framer-motion';
 
 const FAQSection = () => {
     const firstHalf = FAQ_DATA.slice(0, 4);
@@ -14,16 +16,32 @@ const FAQSection = () => {
                 </span>
             </h1>
             <div className="grid md:grid-cols-2 md:gap-12">
-                <div>
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        x: -100,
+                    }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 0.5 }}
+                >
                     {firstHalf.map((faq) => (
                         <FAQAccordionCustom key={faq.id} {...faq} />
                     ))}
-                </div>
-                <div>
+                </motion.div>
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        x: 100,
+                    }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 100 }}
+                    transition={{ duration: 0.5 }}
+                >
                     {secondHalf.map((faq) => (
                         <FAQAccordionCustom key={faq.id} {...faq} />
                     ))}
-                </div>
+                </motion.div>
             </div>
         </div>
     );

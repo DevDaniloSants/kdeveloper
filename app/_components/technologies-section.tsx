@@ -24,8 +24,7 @@ const TechnologiesSection = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -200 }}
                         transition={{
-                            duration: 1,
-                            delay: 0.5,
+                            duration: 0.5,
                         }}
                     >
                         <div className="mb-4 space-y-3">

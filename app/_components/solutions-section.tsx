@@ -43,7 +43,7 @@ const SolutionsSection = () => {
                                     exit={{ opacity: 0, scale: 0 }}
                                     transition={{
                                         duration: 0.2,
-                                        delay: index * 0.4,
+                                        delay: index * 0.3,
                                     }}
                                 />
                             ))}
