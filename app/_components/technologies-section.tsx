@@ -16,7 +16,7 @@ const TechnologiesSection = () => {
             exit={{ opacity: 0, scale: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <Card className="border-none bg-black p-4 sm:p-14">
+            <Card className="border-none bg-black p-6 sm:p-14">
                 <CardContent className="grid p-0 md:grid-cols-4">
                     <motion.div
                         className="flex h-full flex-col justify-between gap-7 md:col-span-2 md:mr-28 md:gap-12"
