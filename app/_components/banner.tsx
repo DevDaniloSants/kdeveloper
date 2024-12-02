@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { Button } from './ui/button';
 import RequestQuoteButton from './request-quote-button';
 import { motion } from 'framer-motion';
+import WhatsappButton from './whatsapp-button';
 
 const Banner = () => {
     return (
@@ -46,15 +46,7 @@ const Banner = () => {
                     transition={{ duration: 0.7, delay: 0.8 }}
                 >
                     <RequestQuoteButton className="w-full" />
-                    <Button size="lg" variant="outline" className="w-full">
-                        <Image
-                            src="whatsapp.svg"
-                            alt="whatsapp"
-                            width={20}
-                            height={20}
-                        />
-                        <p>Whatsapp</p>
-                    </Button>
+                    <WhatsappButton />
                 </motion.div>
             </div>
             <motion.div
