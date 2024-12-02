@@ -50,20 +50,39 @@ const Banner = () => {
                 </motion.div>
             </div>
             <motion.div
-                className="hidden w-[300px] md:block"
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0 }}
+                className="relative hidden w-[350px] before:absolute before:h-[300px] before:w-full before:rounded-full before:bg-primary before:opacity-10 before:blur-2xl before:content-[''] md:block"
+                initial={{ opacity: 0, x: 100 }}
+                whileInView={{
+                    opacity: 1,
+                    x: 0,
+
+                    transition: {
+                        duration: 1,
+                    },
+                }}
+                exit={{ opacity: 0, x: 100 }}
                 transition={{ duration: 0.7, delay: 1 }}
             >
-                <Image
-                    property="priority"
-                    src="bannerImage.svg"
-                    alt="banner"
-                    width={100}
-                    height={100}
-                    className="w-full animate-pulse"
-                />
+                <motion.div
+                    initial={{ y: 0 }}
+                    whileInView={{
+                        y: ['-10px', '10px', '-10px'],
+                    }}
+                    transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        repeatType: 'loop',
+                    }}
+                >
+                    <Image
+                        priority
+                        src="/phone_image.webp"
+                        alt="banner"
+                        width={500}
+                        height={700}
+                        className="w-full object-cover"
+                    />
+                </motion.div>
             </motion.div>
         </div>
     );
