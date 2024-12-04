@@ -19,7 +19,7 @@ const ProjectsSection = () => {
         })
     );
     return (
-        <div className="flex w-full flex-col gap-12">
+        <div id="portfolio" className="flex w-full flex-col gap-12">
             <h1 className="text-center text-2xl font-semibold">
                 Explore nossos
                 <span className="pl-2 font-semibold text-primary">

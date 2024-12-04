@@ -7,7 +7,10 @@ import WhatsappButton from './whatsapp-button';
 
 const Banner = () => {
     return (
-        <div className="flex flex-row items-center justify-between pb-10 lg:h-dvh">
+        <div
+            id="#home"
+            className="flex h-auto flex-row items-center justify-between pb-10 lg:h-dvh"
+        >
             <div className="flex w-full flex-col md:!max-w-[580px]">
                 <motion.h3
                     className="text-base font-semibold text-muted-foreground md:text-xl"

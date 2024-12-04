@@ -12,36 +12,21 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/app/_components/ui/sidebar';
-import { Mail, Home, Wrench, LaptopMinimal } from 'lucide-react';
+
 import CardUserSidebar from './card-user-sidebar';
 import { useSidebarToogle } from '../_utils/useSidebarToggle';
-
-const items = [
-    {
-        title: 'Home',
-        url: '#',
-        icon: Home,
-    },
-    {
-        title: 'Serviços',
-        url: '#',
-        icon: Wrench,
-    },
-    {
-        title: 'Projetos',
-        url: '#',
-        icon: LaptopMinimal,
-    },
-    {
-        title: 'Contato',
-        url: '#',
-        icon: Mail,
-    },
-];
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
+import { SIDEBAR_DATA } from '../_constants/sidebar';
 
 const AppSidebar = () => {
     const { handleToggleSidebar } = useSidebarToogle();
+    const pathName = usePathname();
 
+    useEffect(() => {
+        console.log(pathName);
+    }, [pathName]);
     return (
         <Sidebar>
             <SidebarContent className="pt-6">
@@ -55,16 +40,19 @@ const AppSidebar = () => {
                     <SidebarGroupLabel>Menu</SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu className="space-y-2">
-                            {items.map((item) => (
+                            {SIDEBAR_DATA.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton
                                         asChild
                                         onClick={handleToggleSidebar}
                                     >
-                                        <a href={item.url}>
+                                        <Link
+                                            href={item.url}
+                                            className={`link ${pathName === '/' && window.location.hash === item.url ? 'bg-sidebar-accent' : ''}`}
+                                        >
                                             <item.icon />
                                             <span>{item.title}</span>
-                                        </a>
+                                        </Link>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}

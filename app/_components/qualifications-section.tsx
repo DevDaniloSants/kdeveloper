@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 
 const QualificationSection = () => {
     return (
-        <div className="flex w-full flex-col gap-12">
+        <div id="qualifications" className="flex w-full flex-col gap-12">
             <h1 className="text-center text-2xl font-semibold">
                 Nossas
                 <span className="pl-2 font-semibold text-primary">

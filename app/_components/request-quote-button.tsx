@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { cn } from '../_lib/utils';
 import { Button, ButtonProps } from './ui/button';
 
@@ -7,8 +8,8 @@ interface RequestQuoteButtonProps extends ButtonProps {
 
 const RequestQuoteButton = ({ className }: RequestQuoteButtonProps) => {
     return (
-        <Button size="lg" className={`${cn(className)} `}>
-            Solicitar orçamento
+        <Button size="lg" className={`${cn(className)} `} asChild>
+            <Link href="#contact">Solicitar orçamento</Link>
         </Button>
     );
 };

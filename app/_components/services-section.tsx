@@ -1,7 +1,7 @@
 'use client';
 
 import ServiceCardCustom from './service-card-custom';
-import { SERVICE_CARD_DATA } from '../_constants/services';
+import { SERVICE_DATA } from '../_constants/services';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 import { useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -15,7 +15,7 @@ const ServicesSection = () => {
         })
     );
     return (
-        <div className="flex flex-col gap-12">
+        <div id="services" className="flex flex-col gap-12">
             <h1 className="text-center text-2xl font-semibold">
                 Nossos Diferentes
                 <span className="pl-2 font-semibold text-primary">
@@ -28,7 +28,7 @@ const ServicesSection = () => {
                     plugins={[plugin.current]}
                 >
                     <CarouselContent>
-                        {SERVICE_CARD_DATA.map((service, i) => (
+                        {SERVICE_DATA.map((service, i) => (
                             <CarouselItem
                                 key={service.id}
                                 className="cursor-grabbing md:basis-1/2 lg:basis-1/3 lg:cursor-default"

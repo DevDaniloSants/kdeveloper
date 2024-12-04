@@ -1,6 +1,11 @@
-import { LaptopMinimal, SettingsIcon, ShoppingCartIcon } from 'lucide-react';
+import {
+    LaptopMinimal,
+    SettingsIcon,
+    ShoppingCartIcon,
+    TargetIcon,
+} from 'lucide-react';
 
-export const SERVICE_CARD_DATA = [
+export const SERVICE_DATA = [
     {
         id: 1,
         title: 'E-commerce',
@@ -10,7 +15,7 @@ export const SERVICE_CARD_DATA = [
     },
     {
         id: 2,
-        title: 'Sites Empresariais',
+        title: 'Site Empresarial',
         description:
             'Desenvolvimento de sites modernos, rápidos e responsivos, projetados para destacar o seu negócio.',
         icon: <LaptopMinimal className="text-primary" />,
@@ -21,5 +26,12 @@ export const SERVICE_CARD_DATA = [
         description:
             'Criação de lojas virtuais completas. Seguras e escaláveis.',
         icon: <SettingsIcon className="text-primary" />,
+    },
+    {
+        id: 4,
+        title: 'Landing Page',
+        description:
+            'Páginas otimizadas para campanhas específicas, projetadas para conversão, geração de leads e promoção de serviços ou produtos.',
+        icon: <TargetIcon className="text-primary" />,
     },
 ];

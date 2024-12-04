@@ -8,14 +8,14 @@ const FAQSection = () => {
     const secondHalf = FAQ_DATA.slice(4);
 
     return (
-        <div className="space-y-12">
+        <div id="faq" className="space-y-12">
             <h1 className="text-center text-2xl font-semibold">
                 Perguntas
                 <span className="pl-2 font-semibold text-primary">
                     Frequentes
                 </span>
             </h1>
-            <div className="grid md:grid-cols-2 md:gap-12">
+            <div className="grid gap-8 md:grid-cols-2 md:gap-12">
                 <motion.div
                     initial={{
                         opacity: 0,
@@ -24,6 +24,7 @@ const FAQSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
                     transition={{ duration: 0.5 }}
+                    className="space-y-8"
                 >
                     {firstHalf.map((faq) => (
                         <FAQAccordionCustom key={faq.id} {...faq} />
@@ -37,6 +38,7 @@ const FAQSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 100 }}
                     transition={{ duration: 0.5 }}
+                    className="space-y-8"
                 >
                     {secondHalf.map((faq) => (
                         <FAQAccordionCustom key={faq.id} {...faq} />
