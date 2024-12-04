@@ -27,7 +27,7 @@ export default async function RootLayout({
     const cookieStore = await cookies();
     const defaultOpen = cookieStore.get('sidebar:state')?.value === 'true';
     return (
-        <html lang="pt-br">
+        <html lang="pt-br" className="!scrooll-smooth">
             <body className={`${poppins.className} dark antialiased`}>
                 <SidebarProvider defaultOpen={defaultOpen}>
                     <AppSidebar />
