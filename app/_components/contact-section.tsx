@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
+import emailJs from '@emailjs/browser';
 
 import {
     Form,
@@ -25,7 +26,8 @@ import {
     SelectValue,
 } from './ui/select';
 import { SERVICE_DATA } from '../_constants/services';
-import { CircleCheck } from 'lucide-react';
+import { CircleCheck, CircleXIcon, Loader2Icon } from 'lucide-react';
+import { useToast } from '../_hooks/use-toast';
 
 const formSchema = z.object({
     username: z
@@ -65,8 +67,53 @@ const ContactSection = () => {
         },
     });
 
-    const onSubmit = (data: FormSchema) => {
-        console.log(data);
+    const { toast } = useToast();
+
+    const {
+        formState: { isSubmitting },
+    } = form;
+
+    const onSubmit = async (data: FormSchema) => {
+        try {
+            const templateParams = {
+                from_name: data.username,
+                email: data.email,
+                service: data.service,
+                message: data.message,
+            };
+
+            emailJs.send(
+                'service_nj9hlrf',
+                'template_0lj3xxh',
+                templateParams,
+                'fKbTJxM-fHnSLwZHb'
+            );
+            toast({
+                description: (
+                    <div className="flex items-center gap-2">
+                        <CircleCheck className="h-6 w-6 text-primary" />
+                        <p className="font-bold">
+                            Formulário enviado com sucesso!
+                        </p>
+                    </div>
+                ),
+            });
+            console.log(data);
+            form.reset();
+        } catch (error) {
+            console.log(error);
+            toast({
+                description: (
+                    <div className="flex items-center gap-2">
+                        <CircleXIcon className="h-6 w-6 text-primary" />
+                        <p className="font-bold">
+                            Erro ao enviar o formulário!
+                        </p>
+                    </div>
+                ),
+                variant: 'destructive',
+            });
+        }
     };
 
     return (
@@ -135,7 +182,7 @@ const ContactSection = () => {
                                 name="username"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Username</FormLabel>
+                                        <FormLabel>Nome</FormLabel>
                                         <FormControl>
                                             <Input
                                                 placeholder="Digite o seu nome"
@@ -169,7 +216,7 @@ const ContactSection = () => {
                                 name="telephone"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>telefone</FormLabel>
+                                        <FormLabel>Telefone</FormLabel>
                                         <FormControl>
                                             <PhoneInput {...field} />
                                         </FormControl>
@@ -229,7 +276,14 @@ const ContactSection = () => {
                             )}
                         />
                         <div className="w-full md:w-auto md:self-end">
-                            <Button type="submit" className="w-full">
+                            <Button
+                                type="submit"
+                                className="w-full"
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting && (
+                                    <Loader2Icon className="mr-2 h-4 w-4 animate-spin" />
+                                )}
                                 Enviar
                             </Button>
                         </div>

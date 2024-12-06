@@ -7,6 +7,7 @@ import { SidebarProvider } from './_components/ui/sidebar';
 import AppSidebar from './_components/app-sidebar';
 import Navbar from './_components/navbar';
 import { cookies } from 'next/headers';
+import { Toaster } from './_components/ui/toaster';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -35,6 +36,7 @@ export default async function RootLayout({
                         <Navbar />
                         {children}
                     </main>
+                    <Toaster />
                 </SidebarProvider>
             </body>
         </html>

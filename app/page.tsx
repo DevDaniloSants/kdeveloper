@@ -12,7 +12,7 @@ const Home = () => {
         <div className="my-24 flex justify-center px-6">
             <div className="flex w-full !max-w-[1200px] flex-col">
                 <Banner />
-                <div className="space-y-48">
+                <div className="space-y-12 md:space-y-36 lg:space-y-44">
                     <SolutionsSection />
                     <ServicesSection />
                     <TechnologiesSection />
