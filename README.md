@@ -1,7 +1,7 @@
 # KDeveloper - Developer Portfolio
 
 <p align="center">
-  <img src="https://i.ibb.co/cN3YZXX/Captura-de-tela-2024-12-06-211255.png" alt="KDeveloper - Developer Portfolio">
+  <img src="https://i.ibb.co/GVpH833/Captura-de-tela-2024-12-06-211255.png" alt="Captura-de-tela-2024-12-06-211255">
 </p>
 
 &nbsp; **KDeveloper** é um portfólio online criado com **Next.js**, **TailwindCSS**, **React**, **TypeScript** e **ShadCN**, que destaca minhas habilidades, projetos e qualificações como desenvolvedor. O objetivo deste projeto é fornecer uma plataforma interativa e moderna para mostrar minhas conquistas e competências.
