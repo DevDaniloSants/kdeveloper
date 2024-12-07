@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KDeveloper - Developer Portfolio
 
-## Getting Started
+<p align="center">
+  <img src="https://i.ibb.co/cN3YZXX/Captura-de-tela-2024-12-06-211255.png" alt="KDeveloper - Developer Portfolio">
+</p>
 
-First, run the development server:
+&nbsp; **KDeveloper** é um portfólio online criado com **Next.js**, **TailwindCSS**, **React**, **TypeScript** e **ShadCN**, que destaca minhas habilidades, projetos e qualificações como desenvolvedor. O objetivo deste projeto é fornecer uma plataforma interativa e moderna para mostrar minhas conquistas e competências.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+&nbsp; O front-end foi desenvolvido utilizando **Next.js** para uma renderização rápida e otimizada. A estilização foi feita com **TailwindCSS**, garantindo um design responsivo e limpo. A biblioteca **ShadCN** foi utilizada para criar componentes de interface de usuário (UI) prontos para uso, o que agiliza o desenvolvimento e garante um visual consistente e moderno. Com o uso de **TypeScript**, o código é robusto e fácil de escalar. Além disso, implementei um sistema de **rotas dinâmicas** para apresentar informações sobre os projetos e minhas qualificações de forma intuitiva.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tecnologias Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+⭐ **Next.js**  
+⭐ **TailwindCSS**  
+⭐ **React**  
+⭐ **TypeScript**  
+⭐ **ShadCN**  
+⭐ **ESLint**  
+⭐ **Prettier**  
+⭐ **Husky**  
+⭐ **lint-staged**  
 
-## Learn More
+## Padrões de Commit
 
-To learn more about Next.js, take a look at the following resources:
+Os commits seguem os padrões do **git-commit-msg-linter**, garantindo mensagens claras e padronizadas. Isso facilita a leitura e a compreensão do histórico de alterações do projeto.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## :child: Autor
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<table>
+  <tr>
+    <td align="center">
+        <img src="https://avatars.githubusercontent.com/u/152008168?s=400&u=710379e70ac9c4490d3044ffd12a47092b993f76&v=4" width="100px;" alt="Foto de Danilo Santos no GitHub"/><br>
+        <sub>
+          <b>Danilo Santos</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
